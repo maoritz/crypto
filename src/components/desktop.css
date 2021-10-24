@@ -1,0 +1,26 @@
+.desktop {
+  display: flex;
+  height: 100vh;
+  background-color: #1d1c28;
+  border: 1px white solid;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+}
+
+.phone-image {
+  height: 26rem;
+  margin-left: -12rem;
+  margin-right: -3.5rem;
+}
+.desktop-text-box {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 769px) {
+  .desktop {
+    display: none;
+  }
+}
