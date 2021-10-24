@@ -1,0 +1,15 @@
+@media only screen and (min-width: 769px) {
+  .mobile-app {
+    display: none;
+  }
+}
+
+.mobile-app {
+  background-color: #1d1c28;
+  height: 100vh;
+  text-align: center;
+}
+
+.logo {
+  margin-top: 2.5rem;
+}
