@@ -14,11 +14,6 @@ function App() {
   
   const data = async () => {
     const response = await  axios.get('https://api.sprintt.co/crypto/', axiosOptions)
-
-    if (!response.ok){
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-    
     const data = response.data
     console.log(data)
   }
@@ -26,10 +21,6 @@ function App() {
   data().catch(e => {
     console.log('There has been a problem with your fetch operation: ' + e.message)
   })
-  // .then(res=>console.log(res.data.HELLO))
-  // .catch(err => console.log(err))
-
-
   
   return (
     <div className="App">
