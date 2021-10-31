@@ -1,8 +1,11 @@
 import Desktop from './components/Desktop'
 import Menu from './components/Menu'
 import React, { useState, useEffect } from 'react'
+import {NavLink, BrowserRouter as Router, Route,Switch} from 'react-router-dom'
 import axios from 'axios'
 import './App.css'
+import AllCurrencies from './components/AllCurrencies'
+import TrackedCurrencies from './components/TrackedCurrencies'
 
 
 function App() {
@@ -15,9 +18,9 @@ function App() {
    useEffect(() => {
     const get_current_market_value = async () => {
       const current_market_value = await fetchMarketData()
-      const value = await Object.values(current_market_value)[0]
-      const cutPercent = await value.split("%")[0]
-      const toNumber = await Number(cutPercent)
+      const value = Object.values(current_market_value)[0]
+      const cutPercent = value.split("%")[0]
+      const toNumber = Number(cutPercent)
 
       setMarketValue(toNumber)
     }
@@ -29,14 +32,20 @@ function App() {
     const response = await fetch(
       'https://api.sprintt.co/crypto/currencies/market_change',axiosOptions
     );
-    const data = await response.json()
+    const data = response.json()
     return data
   }
   
   return (
     <div className="App">
       <Desktop />
-      <Menu marketValue={marketValue}/>
+      <Router> 
+         <Menu marketValue={marketValue}/>
+         <Switch >
+                <Route path="/all-currencies" component={AllCurrencies} />
+                <Route path="/tracked-currencies" component={TrackedCurrencies} />
+          </Switch>
+      </Router>
     </div>
   );
 }

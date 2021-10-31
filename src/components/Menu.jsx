@@ -1,20 +1,19 @@
 import './menu.css'
+import React from 'react'
+import {NavLink} from 'react-router-dom'
+import MarketStatus from './MarketStatus'
 
 const Menu = ({marketValue}) => {
 
-    const marketStatus = (value,up,down) => value > 0 ? up : down
-
     return (
-        <div className="menu">
-            <img className='logo' src="logo.png" alt="Logo" />
-            <div className="marketValue">
-                <div>Market is {marketStatus(marketValue,'up','down')}</div>
-                <div className="percentage-box" >
-                    <img className='arrow' src={`${marketStatus(marketValue,'green','red')}_arrow.png`} alt="arrow"  />
-                    <span style={{color:marketStatus(marketValue,'#59bb6e','#DB4848')}}>{marketValue}%</span>
-                </div>
+            <div className="menu">
+                <img className='logo' src="logo.png" alt="Logo" />
+                <MarketStatus value={marketValue} />
+                <ul className='main-nav'>
+                    <li><NavLink activeClassName='active' to='/all-currencies'>All Currencies</NavLink></li>
+                    <li><NavLink activeClassName='active' to='/tracked-currencies'>Tracked Currencies</NavLink></li>
+                </ul>
             </div>
-        </div>
     )
 }
 

@@ -1,0 +1,11 @@
+.marketValue {
+  font-size: 1.5rem;
+}
+
+.arrow {
+  height: 1.3rem;
+}
+
+.percentage-box span {
+  margin-left: 0.5rem;
+}

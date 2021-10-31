@@ -1,4 +1,5 @@
 .menu {
+  position: relative;
   background-color: #2a283d;
   text-align: center;
   padding-bottom: 6em;
@@ -9,14 +10,26 @@
   height: 1.3rem;
 }
 
-.marketValue {
-  font-size: 1.5rem;
+.active {
+  color: gainsboro;
+  text-decoration: none;
 }
 
-.arrow {
-  height: 1.3rem;
+.main-nav {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  list-style: none;
+  width: 100%;
+  border-bottom: gainsboro solid 1px;
 }
 
-.percentage-box span {
-  margin-left: 0.5rem;
+.main-nav li {
+  width: 50%;
+}
+
+@media only screen and (min-width: 769px) {
+  .menu {
+    display: none;
+  }
 }
