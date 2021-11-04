@@ -9,10 +9,10 @@ const Menu = ({marketValue}) => {
             <div className="menu">
                 <img className='logo' src="logo.png" alt="Logo" />
                 <MarketStatus value={marketValue} />
-                <ul className='main-nav'>
-                    <li><NavLink activeClassName='active' to='/all-currencies'>All Currencies</NavLink></li>
-                    <li><NavLink activeClassName='active' to='/tracked-currencies'>Tracked Currencies</NavLink></li>
-                </ul>
+                <div className='main-nav'>
+                    <NavLink className='nav-item' activeClassName='active' to='/all-currencies'>All Currencies</NavLink>
+                    <NavLink className='nav-item' activeClassName='active' to='/tracked-currencies'>Tracked Currencies</NavLink>
+                </div>
             </div>
     )
 }
