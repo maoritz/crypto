@@ -4,12 +4,7 @@
   }
 }
 
-.mobile-app {
+.App {
   background-color: #1d1c28;
   height: 100vh;
-  text-align: center;
-}
-
-.logo {
-  margin-top: 2.5rem;
 }

@@ -1,0 +1,48 @@
+.menu {
+  position: relative;
+  background-color: #2a283d;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.logo {
+  margin: 2.8rem 0 1rem 0;
+  height: 1.3rem;
+}
+
+.main-nav {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  list-style: none;
+  width: 100%;
+}
+
+.main-nav .nav-item {
+  width: 50%;
+  border-bottom: 1px solid #898989;
+  padding-bottom: 0.4rem;
+}
+
+.main-nav .nav-item:hover,
+.main-nav .nav-item:active {
+  width: 50%;
+  border-bottom: 1px solid #d6d5da;
+  color: #d6d5da;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #898989;
+}
+
+@media only screen and (min-width: 769px) {
+  .menu {
+    display: none;
+  }
+}
+
+/* 
+Underline colors:#D6D5DA #898989
+*/
