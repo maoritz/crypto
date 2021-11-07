@@ -1,3 +1,8 @@
+/* 
+ colors
+#D6D5DA #898989 #2a283d
+*/
+
 .menu {
   position: relative;
   background-color: #2a283d;
@@ -20,14 +25,15 @@
 
 .main-nav .nav-item {
   width: 50%;
-  border-bottom: 1px solid #898989;
-  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #898989;
+  padding-bottom: 1rem;
+  box-shadow: 0px 15px 10px -15px #111;
 }
 
 .main-nav .nav-item:hover,
 .main-nav .nav-item:active {
   width: 50%;
-  border-bottom: 1px solid #d6d5da;
+  border-bottom: 2px solid #d6d5da;
   color: #d6d5da;
 }
 
@@ -42,7 +48,3 @@ a:visited {
     display: none;
   }
 }
-
-/* 
-Underline colors:#D6D5DA #898989
-*/
