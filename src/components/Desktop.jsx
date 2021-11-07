@@ -8,7 +8,7 @@ const Desktop = () => {
                 <p>Please open the app from mobile device</p>
             </div>
             <div >
-                <img className="phone-image" src="Mockup.png" alt="Phone image" />
+                <img className="phone-image" src="Mockup.png" alt="Phone" />
             </div>
         </div>
     )
