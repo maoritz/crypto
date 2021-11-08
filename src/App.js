@@ -5,6 +5,7 @@ import './App.css'
 import AllCurrencies from './components/AllCurrencies'
 import TrackedCurrencies from './components/TrackedCurrencies'
 import useFetch from './hooks/useFetch'
+import useWidth from './hooks/useWidth'
 
 
 function App() {
@@ -17,18 +18,19 @@ function App() {
   }
 
   const marketValue = useFetch('https://api.sprintt.co/crypto/currencies/market_change',handleMarketValueData)
-
+  const {width} = useWidth()
 
   return (
     <div className="App">
-      <Desktop />
-      <Router>
-        <Menu marketValue={marketValue} />
-        <Switch >
-          <Route path="/all-currencies" component={AllCurrencies} />
-          <Route path="/tracked-currencies" component={TrackedCurrencies} />
-        </Switch>
-      </Router>
+      {width > 768 ? <Desktop /> : 
+        <Router>
+          <Menu marketValue={marketValue} />
+          <Switch >
+            <Route path="/all-currencies" component={AllCurrencies} />
+            <Route path="/tracked-currencies" component={TrackedCurrencies} />
+          </Switch>
+        </Router>
+      }
     </div>
   );
 }
