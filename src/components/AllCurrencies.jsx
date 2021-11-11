@@ -1,9 +1,9 @@
-import React from 'react'
+import Currency from "./Currency"
 
 const AllCurrencies = () => {
     return (
         <div>
-            All Currencies
+            <Currency />
         </div>
     )
 }
