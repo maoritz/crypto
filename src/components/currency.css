@@ -42,6 +42,10 @@
   font-size: 0.7rem;
 }
 
+.rate-box .arrow {
+  margin: 0.2rem 0.2rem 0 0;
+}
+
 .name-symbol-box {
   padding-left: 0.5rem;
 }
