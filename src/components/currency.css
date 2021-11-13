@@ -2,10 +2,18 @@
     #2B2F39
 */
 
+.currency-cotainer {
+  padding-bottom: 3%;
+}
+
+.currency-cotainer:first-child {
+  padding-top: 3%;
+}
+
 .currency {
   display: flex;
   width: 86%;
-  margin: 3% 0px 3% 7%;
+  margin-left: 7%;
   border-radius: 20px;
   background-color: #2b2f39;
   align-items: center;
