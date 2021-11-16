@@ -6,16 +6,10 @@ import AllCurrencies from './components/AllCurrencies'
 import TrackedCurrencies from './components/TrackedCurrencies'
 import useFetch from './hooks/useFetch'
 import useWidth from './hooks/useWidth'
+import {handleMarketValueData} from './services/formatData'
 
 
 function App() {
-
-  const handleMarketValueData = (response) => {
-    const value = Object.values(response)[0]
-    const cutPercent = value.split("%")[0]
-    const toNumber = Number(cutPercent)
-    return toNumber
-  }
 
   const marketValue = useFetch('https://api.sprintt.co/crypto/currencies/market_change',handleMarketValueData)
   const {width} = useWidth()

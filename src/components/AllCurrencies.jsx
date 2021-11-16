@@ -1,9 +1,14 @@
-import React from 'react'
+import Currency from "./Currency"
+import useFetch from "../hooks/useFetch"
 
 const AllCurrencies = () => {
-    return (
+    const currencies = useFetch("https://api.sprintt.co/crypto/currencies/list?limit=20&offset=0")
+        return (
+
         <div>
-            All Currencies
+              {currencies && currencies.currencies_list.map((currency) => {
+               return <Currency key={currency["currency_id"]} currencyData = {currency}/>
+            })}  
         </div>
     )
 }

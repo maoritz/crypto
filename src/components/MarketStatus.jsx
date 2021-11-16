@@ -1,21 +1,11 @@
 import React from 'react'
 import './marketStatus.css'
+import {getMarketStatusFormating} from '../services/formatData'
 
 const MarketStatus = ({value}) => {
-    let text;
-    let imageSource;
-    let textColor;
 
-    if(value > 0 ){ 
-        text = 'Market is up'
-        imageSource = "green_arrow.png"
-        textColor = '#59bb6e'
-    }else{
-        text = 'Market is down'
-        imageSource = "red_arrow.png"
-        textColor = '#DB4848'
-    }
-
+    const {text,imageSource,textColor} = getMarketStatusFormating(value)
+    
     return (
         <div>
             <div className="marketValue">
