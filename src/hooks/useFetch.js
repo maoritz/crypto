@@ -7,20 +7,21 @@ const useFetch = (url, handleData) => {
         const options = {
         headers: { 'user-access-token': '55a9b1f7-d694-463e-9853-7a035952ecf9' }
         };
-        const fetchData = async () => {
+
+        const getAndHandleData = async () => {
             const response = await fetch(
                 url , options
             );
-            const data = response.json()
-            return data
-        }
-        const getAndHandleData = async () => {
-            const response = await fetchData()
-            setData(handleData(response))
+
+            const responseJson = await response.json()
+            let formattedData = responseJson
+            if(handleData){ 
+                formattedData = handleData(responseJson)
+            }
+            setData(formattedData)
         }
         getAndHandleData()
     }, [])
-
     return data
 }
 

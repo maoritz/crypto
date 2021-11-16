@@ -3,7 +3,6 @@ import {exractNumberFromPercetageString,getMarketStatusFormating} from '../servi
 
 const Currency = ({currencyData}) => {
     
-    
    const {change_24h,image_url,name,price,symbol} = currencyData
    const value = exractNumberFromPercetageString(change_24h)
    const {imageSource,textColor} = getMarketStatusFormating(value)
