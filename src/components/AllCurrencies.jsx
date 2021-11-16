@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch"
 
 const AllCurrencies = () => {
     const currencies = useFetch("https://api.sprintt.co/crypto/currencies/list?limit=20&offset=0")
+
         return (
 
         <div>
