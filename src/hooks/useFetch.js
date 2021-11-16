@@ -4,6 +4,7 @@ const useFetch = (url, handleData) => {
     const [data, setData] = useState()
     
     useEffect(() => {
+        
         const options = {
         headers: { 'user-access-token': '55a9b1f7-d694-463e-9853-7a035952ecf9' }
         };
@@ -21,7 +22,8 @@ const useFetch = (url, handleData) => {
             setData(formattedData)
         }
         getAndHandleData()
-    }, [])
+    }, [handleData, url])
+
     return data
 }
 
