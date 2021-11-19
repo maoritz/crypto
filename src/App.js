@@ -1,28 +1,28 @@
 import Desktop from './components/Desktop'
-import Menu from './components/Menu'
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css'
-import AllCurrencies from './components/AllCurrencies'
-import TrackedCurrencies from './components/TrackedCurrencies'
-import useFetch from './hooks/useFetch'
+import Home from './components/Home'
 import useWidth from './hooks/useWidth'
-import {handleMarketValueData} from './services/formatData'
+import CryptoCurrency from './components/CryptoCurrency'
+import { Redirect } from 'react-router'
 
 
 function App() {
 
-  const marketValue = useFetch('https://api.sprintt.co/crypto/currencies/market_change',handleMarketValueData)
+
   const {width} = useWidth()
 
   return (
     <div className="App">
       {width > 768 ? <Desktop /> : 
         <Router>
-          <Menu marketValue={marketValue} />
-          <Switch >
-            <Route path="/all-currencies" component={AllCurrencies} />
-            <Route path="/tracked-currencies" component={TrackedCurrencies} />
-          </Switch>
+            <Switch>
+                <Route exact path='/'> 
+                    <Redirect to='/home/all-currencies'/>
+                </Route>
+                <Route path='/home' component={Home}/>
+                <Route path='/crypto-currency' component={CryptoCurrency} />
+            </Switch>
         </Router>
       }
     </div>
