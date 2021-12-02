@@ -1,17 +1,20 @@
 import './currency.css'
 import {exractNumberFromPercetageString,getMarketStatusFormating} from '../services/formatData'
 import {Link} from "react-router-dom"
+import { CurrencyContext } from '../context/CurrencyContext'
+import { useContext } from 'react'
 
 const Currency = ({currencyData}) => {
     
    const {change_24h,image_url,name,price,symbol} = currencyData
    const value = exractNumberFromPercetageString(change_24h)
    const {imageSource,textColor} = getMarketStatusFormating(value)
+   const setSelectedCurrency = useContext(CurrencyContext)
   
     return (
         <div className="currency-cotainer">
-            <Link to="/crypto-currency">
-                <div className='currency'>   
+            <Link to="/currency-details">
+                <div className='currency' onClick={() => setSelectedCurrency(currencyData)}>   
                     <div className="icon-name-symbol-box">
                         <img src={image_url} alt="coin icon" />
                         <div className='name-symbol-box'>
@@ -25,7 +28,7 @@ const Currency = ({currencyData}) => {
                     </div>
                 </div>       
             </Link>
-            </div>
+        </div>
     )
 }
 
