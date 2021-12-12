@@ -17,6 +17,10 @@
   padding-top: 2rem;
 }
 
+.currency-bar .logo-container {
+  text-align: center;
+}
+
 .currency-details .body {
   padding-top: 2rem;
   display: flex;

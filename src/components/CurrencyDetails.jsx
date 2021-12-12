@@ -6,12 +6,12 @@ import {getMarketStatusFormating ,exractNumberFromPercetageString} from '../serv
 const CryptoCurrency = ({selectedCurrency}) => {
     
     const [localData,setLocalData] = useState(selectedCurrency)
+ 
     
     useEffect(() => {
         if( selectedCurrency){
             const jsonObject =JSON.stringify(localData)
             window.localStorage.setItem("currencies_list",jsonObject)
-
         }
 
         else{
@@ -26,9 +26,6 @@ const CryptoCurrency = ({selectedCurrency}) => {
         }
     }, [])
 
-  
-
-    
     
     return (
         
@@ -39,9 +36,11 @@ const CryptoCurrency = ({selectedCurrency}) => {
                         <ion-icon name="chevron-back-outline"></ion-icon>
                     </Link>
                 </div>
-                <img className="logo" src="logo.png" alt="logo" />
+                <div className='logo-container'>
+                    <img className="logo" src="logo.png" alt="logo" />
+                </div>
             </div>
-            
+
 {      localData &&
            <div className="body">
                 <ul className='name-symbol-box'>
@@ -51,9 +50,9 @@ const CryptoCurrency = ({selectedCurrency}) => {
                 <ul className="rate-change-last-day-box">
                     <li>${localData.price}</li>
                     <li>
-                        <img className="arrow" src={getMarketStatusFormating(localData.value).imageSource} alt="arrow" />
-                        <span style={{color:getMarketStatusFormating(localData.value)}}>
-                                {exractNumberFromPercetageString(localData.change_24h)}
+                        <img className="arrow" src={getMarketStatusFormating(exractNumberFromPercetageString(localData.change_24h)).imageSource} alt="arrow" />
+                        <span style={{color:getMarketStatusFormating(exractNumberFromPercetageString(localData.change_24h)).textColor}}>
+                                {exractNumberFromPercetageString(localData.change_24h)}%
                         </span>
                     </li>
                 </ul>

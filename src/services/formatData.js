@@ -26,4 +26,18 @@ const getMarketStatusFormating = (marketStatusNumber) => {
     return marketStatusFormating
 }
 
-export {exractNumberFromPercetageString,handleMarketValueData,getMarketStatusFormating}
+
+  const trackButtonValues= (number)=>{
+    const values = {}
+
+    if (number){
+        values.text = "Remove from tracked currencies list" 
+        values.backgroundColor= "transparent"
+    }else{
+        values.text = "Add to tracked currencies list"
+        values.backgroundColor = "#686CD7"
+    }
+        return values
+  }
+
+export {exractNumberFromPercetageString,handleMarketValueData,getMarketStatusFormating,trackButtonValues}
