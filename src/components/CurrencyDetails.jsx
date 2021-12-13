@@ -24,7 +24,7 @@ const CryptoCurrency = ({selectedCurrency}) => {
         return () => {
             window.localStorage.removeItem("currencies_list")
         }
-    }, [selectedCurrency,localData])
+    },[])
 
 
     const onTrack = async () => {
