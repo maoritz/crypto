@@ -30,12 +30,13 @@ const getMarketStatusFormating = (marketStatusNumber) => {
   const trackButtonValues= (number)=>{
     const values = {}
 
-    if (number){
-        values.text = "Remove from tracked currencies list" 
-        values.backgroundColor= "transparent"
-    }else{
+    if (!number){
         values.text = "Add to tracked currencies list"
         values.backgroundColor = "#686CD7"
+
+    }else{
+        values.text = "Remove from tracked currencies list" 
+        values.backgroundColor= "transparent"
     }
         return values
   }

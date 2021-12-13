@@ -6,7 +6,7 @@ const useFetch = (url, handleData) => {
     useEffect(() => {
         
         const options = {
-        headers: { 'user-access-token': '55a9b1f7-d694-463e-9853-7a035952ecf9' }
+            headers: { 'user-access-token': '55a9b1f7-d694-463e-9853-7a035952ecf9' }
         };
 
         const getAndHandleData = async () => {
