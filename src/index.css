@@ -15,5 +15,9 @@ body {
   overflow-x: hidden;
   font-size: 20px;
   font-family: "Roboto", sans-serif;
-  color: #d4d3d8;
+  color: #d6d5da;
+}
+
+ul {
+  list-style: none;
 }

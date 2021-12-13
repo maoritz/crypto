@@ -16,14 +16,29 @@ const getMarketStatusFormating = (marketStatusNumber) => {
 
     if(marketStatusNumber > 0 ){ 
        marketStatusFormating.text = 'Market is up'
-       marketStatusFormating.imageSource = "green_arrow.png"
+       marketStatusFormating.imageSource = "/green_arrow.png"
        marketStatusFormating.textColor = '#59bb6e'
     }else{
        marketStatusFormating.text = 'Market is down'
-       marketStatusFormating.imageSource = "red_arrow.png"
+       marketStatusFormating.imageSource = "/red_arrow.png"
        marketStatusFormating.textColor = '#DB4848'
     }
     return marketStatusFormating
 }
 
-export {exractNumberFromPercetageString,handleMarketValueData,getMarketStatusFormating}
+
+  const trackButtonValues= (number)=>{
+    const values = {}
+
+    if (!number){
+        values.text = "Add to tracked currencies list"
+        values.backgroundColor = "#686CD7"
+
+    }else{
+        values.text = "Remove from tracked currencies list" 
+        values.backgroundColor= "transparent"
+    }
+        return values
+  }
+
+export {exractNumberFromPercetageString,handleMarketValueData,getMarketStatusFormating,trackButtonValues}
